@@ -1,0 +1,22 @@
+{
+  "name": "experiment-js-modules",
+  "version": "0.0.1",
+  "description": "\"Experimentation with different kinds of JavaScript modules\"",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ne05ky/experiments-js-modules.git"
+  },
+  "author": "NE05KY",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ne05ky/experiments-js-modules/issues"
+  },
+  "homepage": "https://github.com/ne05ky/experiments-js-modules#readme",
+  "dependencies": {
+    "requirejs": "2.2.0"
+  }
+}

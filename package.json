@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/ne05ky/js-experiments#readme",
   "dependencies": {
+    "angular": "1.5.5",
+    "angular-messages": "1.5.5",
     "requirejs": "2.2.0"
   }
 }

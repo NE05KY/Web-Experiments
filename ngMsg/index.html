@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>ngMsg</title>
+    <meta charset="UTF-8">
+    <title>ngMsg</title>
 
-	<script src="/node_modules/angular/angular.js"></script>
-	<script src="/node_modules/angular-messages/angular-messages.js"></script>
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="/node_modules/angular-messages/angular-messages.js"></script>
 
-	<script src="js/app.js"></script>
-	<script src="js/validation.directive.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/validation.directive.js"></script>
 </head>
 <body ng-app="app">
-<form name="form" novalidate>
-	<input type="text" name="field" ng-model="message" ng-minlength="5" ng-maxlength="25" required validation>
+<form name="form">
+    <input type="text" id="length-input" ng-model="message1" ng-minlength="2" ng-maxlength="10" required validation>
 
-	<input type="text" name="field1" ng-model="message1" ng-minlength="2" ng-maxlength="3" required validation>
-
-	<input type="text" name="field2" ng-model="message2" ng-pattern="/\d+/" required validation>
+    <input type="text" id="field2" ng-model="message2" ng-pattern="/\d+/" required validation>
 </form>
 </body>
 </html>

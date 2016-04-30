@@ -4,7 +4,7 @@
   "description": "\"Experimentation with various features from JS world\"",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "protractor"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,15 @@
     "angular": "1.5.5",
     "angular-messages": "1.5.5",
     "requirejs": "2.2.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-jasmine": "^0.3.8",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-requirejs": "^0.2.6",
+    "phantomjs": "^2.1.7",
+    "sinon": "^1.17.3"
   }
 }

@@ -1,8 +1,17 @@
 (function () {
     var regexp = document.getElementById('regexp'),
-        text = document.getElementById('text');
+        text = document.getElementById('text'),
+        originalText = text.innerHTML;
 
-    regexp.addEventListener('keydown', function () {
+    function matchWords() {
+        try {
+            var exp = new RegExp(regexp.value, 'g');
+            text.innerHTML = originalText.replace(exp, '<span>$&</span>');
+        } catch (err) {
+            console.log(err);
+        }
+    }
 
-    }, false);
+    regexp.addEventListener('keyup', matchWords, false);
+    matchWords();
 })();

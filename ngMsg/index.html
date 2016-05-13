@@ -7,14 +7,16 @@
     <script src="/node_modules/angular/angular.js"></script>
     <script src="/node_modules/angular-messages/angular-messages.js"></script>
 
-    <script src="js/app.js"></script>
-    <script src="js/validation.directive.js"></script>
+    <script src="app.js"></script>
+    <script src="validation.directive.js"></script>
 </head>
 <body ng-app="app">
 <form name="form">
-    <input type="text" id="length-input" ng-model="message1" ng-minlength="2" ng-maxlength="10" required validation>
+    <input type="text" id="input-required" ng-model="message0" required validation>
 
-    <input type="text" id="field2" ng-model="message2" ng-pattern="/\d+/" required validation>
+    <input type="text" id="input-length" ng-model="message1" ng-minlength="2" ng-maxlength="10" validation>
+
+    <input type="text" id="input-pattern" ng-model="message2" ng-pattern="/\d+/" validation>
 </form>
 </body>
 </html>

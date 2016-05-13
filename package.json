@@ -5,7 +5,8 @@
   "main": "index.html",
   "scripts": {
     "postinstall": "node_modules/.bin/webdriver-manager update",
-    "test": "protractor protractor.conf.js"
+    "test": "protractor protractor.conf.js",
+    "wd": "node_modules/.bin/webdriver-manager start"
   },
   "repository": {
     "type": "git",

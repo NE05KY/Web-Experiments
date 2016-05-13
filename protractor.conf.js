@@ -1,5 +1,5 @@
 exports.config = {
-    specs: ['**/*spec.js'],
+    specs: ['**/*.e2e.spec.js'],
     exclude: ['node_modules/**/*'],
     baseUrl: 'http://localhost:8080',
     seleniumAddress: 'http://localhost:4444/wd/hub',

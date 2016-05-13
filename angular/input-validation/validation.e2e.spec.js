@@ -1,5 +1,5 @@
 describe('ngMsg', () => {
-    browser.get('ngMsg/');
+    browser.get('angular/input-validation/');
 
     describe('length validation', () => {
         var input = element(by.id('input-length'));

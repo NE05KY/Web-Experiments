@@ -1,23 +1,24 @@
 {
-  "name": "js-experiments",
+  "name": "Web-Experiments",
   "version": "0.0.1",
-  "description": "\"Experimentation with various features from JS world\"",
+  "description": "\"Experimentation with various features from web world\"",
   "main": "index.html",
   "scripts": {
     "postinstall": "node_modules/.bin/webdriver-manager update",
-    "test": "protractor protractor.conf.js",
+    "test": "npm run test-e2e",
+    "test-e2e": "protractor protractor.conf.js",
     "wd": "node_modules/.bin/webdriver-manager start"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/ne05ky/js-experiments.git"
+    "url": "git+ssh://git@github.com/ne05ky/web-experiments.git"
   },
   "author": "NE05KY",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ne05ky/js-experiments/issues"
+    "url": "https://github.com/ne05ky/web-experiments/issues"
   },
-  "homepage": "https://github.com/ne05ky/js-experiments#readme",
+  "homepage": "https://github.com/ne05ky/web-experiments#readme",
   "dependencies": {
     "angular": "1.5.5",
     "angular-messages": "1.5.5",

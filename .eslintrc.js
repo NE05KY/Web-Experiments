@@ -10,7 +10,6 @@ module.exports = {
         "angular": true,
         "module": true
     },
-    "plugins": ["angular"],
     "extends": "eslint:recommended",
     "rules": {
         // Possible Errors

@@ -1,13 +1,14 @@
 {
   "name": "Web-Experiments",
   "version": "0.0.1",
-  "description": "\"Experimentation with various features from web world\"",
+  "description": "Experimentation with various features from web world",
   "main": "index.html",
   "scripts": {
     "postinstall": "webdriver-manager update",
-    "test": "npm run test-e2e",
+    "test": "npm run test-e2e && npm run lint",
     "test-e2e": "protractor protractor.conf.js",
-    "wd": "webdriver-manager start"
+    "wd": "webdriver-manager start",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,8 @@
     "requirejs": "2.2.0"
   },
   "devDependencies": {
+    "eslint": "2.11.0",
+    "eslint-plugin-angular": "1.0.1",
     "phantomjs": "2.1.7",
     "protractor": "3.3.0"
   }

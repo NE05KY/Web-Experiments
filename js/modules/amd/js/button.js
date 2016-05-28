@@ -1,21 +1,25 @@
-define('Button', function () {
-    function Button(text, id) {
-        this.element = document.createElement("button");
-        this.element.setAttribute("id", id);
-        this.element.innerHTML = text;
-    }
+(function () {
+    'use strict';
 
-    Button.prototype.append = function (dest) {
-        dest.appendChild(this.element);
-    };
+    define('Button', function () {
+        function Button(text, id) {
+            this.element = document.createElement("button");
+            this.element.setAttribute("id", id);
+            this.element.innerHTML = text;
+        }
 
-    Button.prototype.addEventListener = function (eventType, cb) {
-        this.element.addEventListener(eventType, cb);
-    };
+        Button.prototype.append = function (dest) {
+            dest.appendChild(this.element);
+        };
 
-    Button.prototype.removeEventListener = function (eventType, cb) {
-        this.element.removeEventListener(eventType, cb);
-    };
+        Button.prototype.addEventListener = function (eventType, cb) {
+            this.element.addEventListener(eventType, cb);
+        };
 
-    return Button;
-});
+        Button.prototype.removeEventListener = function (eventType, cb) {
+            this.element.removeEventListener(eventType, cb);
+        };
+
+        return Button;
+    });
+})();

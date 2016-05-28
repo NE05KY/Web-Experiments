@@ -1,75 +1,85 @@
-describe('ngMsg', () => {
-    browser.get('angular/input-validation/');
+(function () {
+    'use strict';
 
-    describe('length validation', () => {
-        var input = element(by.id('input-length'));
-        beforeEach(() => {
-            input.clear();
+    function toMatchClasses(element, expectedClasses) {
+        var classes = element.getAttribute('class');
+        expectedClasses.forEach(item => {
+            expect(classes).toMatch(item);
         });
+    }
 
-        it('should be invalid with 1 character', () => {
-            var classes = input.sendKeys('a').getAttribute('class'),
-                regexp = /(?=.*ng-invalid)(?=.*ng-invalid-minlength)(?=.*ng-valid-maxlength).*/;
+    describe('ngMsg', () => {
+        browser.get('angular/input-validation/');
 
-            expect(classes).toMatch(regexp);
-        });
-
-        it('should be valid with 3 characters', () => {
-            var classes = input.sendKeys('abc').getAttribute('class'),
-                regexp = /(?=.*ng-valid)(?=.*ng-valid-minlength)(?=.*ng-valid-maxlength).*/;
-
-            expect(classes).toMatch(regexp);
-        });
-
-        it('should be invalid with 11 characters', () => {
-            var classes = input.sendKeys('abcdefghijk').getAttribute('class'),
-                regexp = /(?=.*ng-invalid)(?=.*ng-valid-minlength)(?=.*ng-invalid-maxlength).*/;
-
-            expect(classes).toMatch(regexp);
-        });
-    });
-
-    describe('required validation', () => {
-        var input = element(by.id('input-required'));
-        beforeEach(() => {
-            input.clear();
-        });
-
-        it('should be invalid if empty', () => {
-            var classes = input.getAttribute('class'),
-                regexp = /(?=.*ng-invalid)(?=.*ng-invalid-required).*/;
-
-            expect(classes).toMatch(regexp);
-        });
-
-        it('should be valid with characters', () => {
-            var classes = input.sendKeys('characters').getAttribute('class'),
-                regexp = /(?=.*ng-valid)(?=.*ng-valid-required).*/;
-
-            expect(classes).toMatch(regexp);
-        })
-    });
-
-    describe('pattern validation', () => {
-        var input = element(by.id('input-pattern'));
-        beforeEach(() => {
-            input.clear();
-        });
-
-        describe('digit pattern', () => {
-            it('should be invalid with characters', () => {
-                var classes = input.sendKeys('characters').getAttribute('class'),
-                    regexp = /(?=.*ng-invalid)(?=.*ng-invalid-pattern).*/;
-
-                expect(classes).toMatch(regexp);
+        describe('length validation', () => {
+            var input = element(by.id('input-length'));
+            beforeEach(() => {
+                input.clear();
             });
 
-            it('should be valid with digits', () => {
-                var classes = input.sendKeys(123).getAttribute('class'),
-                    regexp = /(?=.*ng-valid)(?=.*ng-valid-pattern).*/;
+            it('should be invalid with 1 character', () => {
+                var expectedClasses = ['ng-invalid', 'ng-invalid-minlength', 'ng-valid-maxlength'];
 
-                expect(classes).toMatch(regexp);
+                input.sendKeys('a');
+                toMatchClasses(input, expectedClasses);
+            });
+
+            it('should be valid with 3 characters', () => {
+                var expectedClasses = ['ng-valid', 'ng-valid-minlength', 'ng-valid-maxlength'];
+
+                input.sendKeys('abc');
+                toMatchClasses(input, expectedClasses);
+            });
+
+            it('should be invalid with 11 characters', () => {
+                var expectedClasses = ['ng-invalid', 'ng-valid-minlength', 'ng-invalid-maxlength'];
+
+                input.sendKeys('abcdefghijk');
+                toMatchClasses(input, expectedClasses);
+            });
+        });
+
+        describe('required validation', () => {
+            var input = element(by.id('input-required'));
+            beforeEach(() => {
+                input.clear();
+            });
+
+            it('should be invalid if empty', () => {
+                var expectedClasses = ['ng-invalid', 'ng-invalid-required'];
+
+                toMatchClasses(input, expectedClasses);
+            });
+
+            it('should be valid with characters', () => {
+                var expectedClasses = ['ng-valid', 'ng-valid-required'];
+
+                input.sendKeys('characters');
+                toMatchClasses(input, expectedClasses);
             })
         });
+
+        describe('pattern validation', () => {
+            var input = element(by.id('input-pattern'));
+            beforeEach(() => {
+                input.clear();
+            });
+
+            describe('digit pattern', () => {
+                it('should be invalid with characters', () => {
+                    var expectedClasses = ['ng-invalid', 'ng-invalid-pattern'];
+
+                    input.sendKeys('characters');
+                    toMatchClasses(input, expectedClasses);
+                });
+
+                it('should be valid with digits', () => {
+                    var expectedClasses = ['ng-valid', 'ng-valid-pattern'];
+
+                    input.sendKeys('123');
+                    toMatchClasses(input, expectedClasses);
+                })
+            });
+        });
     });
-});
+})();

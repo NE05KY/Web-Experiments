@@ -1,3 +1,5 @@
-'use strict';
+(function () {
+    'use strict';
 
-angular.module('app', ['ngMessages', 'app']);
+    angular.module('app', ['ngMessages', 'app']);
+})();

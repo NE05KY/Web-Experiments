@@ -127,29 +127,5 @@ module.exports = {
         // TODO: Node.js and CommonJS
         // TODO:Stylistic Issues
         // TODO: ECMAScript 6
-
-        // TODO: Angular plugin - Possible Errors
-        // TODO: Angular plugin - Best Practices
-        // TODO: Angular plugin - Deprecated Angular Features
-        // TODO: Angular plugin - Naming
-        // TODO: Angular plugin - Conventions
-        // TODO: Angular plugin - Wrappers
-        "angular/angularelement": "error",
-        "angular/definedundefined": "error",
-        "angular/document-service": "off",
-        "angular/foreach": "off",
-        "angular/interval-service": "error",
-        "angular/json-functions": "error",
-        "angular/log": "off",
-        "angular/no-angular-mock": "off",
-        "angular/no-jquery-angularelement": "error",
-        "angular/timeout-service": "error",
-        "angular/typecheck-array": "error",
-        "angular/typecheck-date": "error",
-        "angular/typecheck-function": "error",
-        "angular/typecheck-number": "error",
-        "angular/typecheck-object": "error",
-        "angular/typecheck-string": "error",
-        "angular/window-service": "error"
     }
 };

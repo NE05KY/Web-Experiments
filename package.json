@@ -28,6 +28,7 @@
   "devDependencies": {
     "eslint": "2.11.0",
     "phantomjs": "2.1.7",
-    "protractor": "3.3.0"
+    "protractor": "3.3.0",
+    "sauce-connect-launcher": "0.14.0"
   }
 }
